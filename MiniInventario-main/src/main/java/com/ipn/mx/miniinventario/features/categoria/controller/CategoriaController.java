@@ -25,7 +25,7 @@ public class CategoriaController {
     @ResponseStatus(HttpStatus.OK)
     public List<Categoria> findAll(){
 
-        emailService.enviarCorreo("monsecontreras126@gmail.com", "Saludos coordiales", "Se han pedido todas las categorias");
+        //emailService.enviarCorreo("monsecontreras126@gmail.com", "Saludos coordiales", "Se han pedido todas las categorias");
         return categoriaService.findAll();
     }
 
