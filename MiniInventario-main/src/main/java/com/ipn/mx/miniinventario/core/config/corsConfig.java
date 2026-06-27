@@ -11,15 +11,19 @@ public class corsConfig {
     @Bean
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
+
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                // Habilitamos CORS para todo el backend
+
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:4200")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedOrigins(
+                                "http://localhost:4200",
+                                "https://miniinventario4bm2cgim.netlify.app"
+                        )
+                        .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
                         .allowedHeaders("*")
-                        .exposedHeaders("Authorization")
                         .allowCredentials(true);
+
             }
         };
     }
